@@ -30,7 +30,7 @@ public class Stairs : MonoBehaviour
 
             }
 
-            t += 0.5f * Time.deltaTime;
+            t += 0.45f * Time.deltaTime;
         }
         else {
             timeElapsed += 1f * Time.deltaTime;
