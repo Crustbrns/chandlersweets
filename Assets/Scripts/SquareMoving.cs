@@ -8,7 +8,8 @@ public class SquareMoving : MonoBehaviour
 {
     public int count;
     public GameObject player;
-    private bool stoped;
+    public bool goingLeft;
+    public bool dontMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,14 @@ public class SquareMoving : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            stoped = !stoped;
+            goingLeft = !goingLeft;
         }
     }
     void Update()
     {
-        player.transform.position = new Vector2(player.transform.position.x + 3f * (stoped ? 1f : -1f) * Time.deltaTime, player.transform.position.y);
+        if (!dontMove)
+        {
+            player.transform.position = new Vector2(player.transform.position.x + 3f * (goingLeft ? -1f : 1f) * Time.deltaTime, player.transform.position.y);
+        }
     }
 }
