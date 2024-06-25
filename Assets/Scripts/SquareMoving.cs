@@ -27,6 +27,11 @@ public class SquareMoving : MonoBehaviour
         {
             goingLeft = !goingLeft;
         }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider); 
+        }
     }
     void Update()
     {
