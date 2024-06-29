@@ -10,12 +10,16 @@ public class PlayerTouch : MonoBehaviour
     {
     }
 
-    public void LoadScene()
-    {
-        SceneManager.LoadScene("playerinfo", LoadSceneMode.Additive);
-    }
     void Update()
     {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
 
+            if (touch.phase == TouchPhase.Began)
+            {
+
+            }
+        }
     }
 }
